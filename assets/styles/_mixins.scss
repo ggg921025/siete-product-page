@@ -1,0 +1,26 @@
+@mixin setQueulatFont($weight, $size, $height){
+  font-family: Queulat;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $size;
+  line-height: $height;
+}
+@mixin setSieteTltular2Font($weight, $size, $height){
+  font-family: SieteTltular2;
+  font-weight: $weight;
+  font-style: normal;
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin mq($width, $type: min) {
+  @if map_has_key($breakpoints, $width) {
+      $width: map_get($breakpoints, $width);
+      @if $type == max {
+          $width: $width - 1px;
+      }
+      @media only screen and (#{$type}-width: $width) {
+          @content;
+      }
+  }
+}

@@ -1,0 +1,30 @@
+.rating {
+    float:left;
+    width:19vw;
+    margin-top: 1vw;
+}
+.rating span { float:right; position:relative; }
+.rating span input {
+    position:absolute;
+    top:0px;
+    left:0px;
+    opacity:0;
+}
+.rating span label {
+    display:inline-block;
+    width:32px;
+    height:32px;
+    text-align:center;
+    background-image: url("../imgs/star-gray.svg");
+    /* color:#FFF;
+    background:#ccc; */
+    font-size:32px;
+    margin-right:5px;
+    line-height:32px;
+}
+.rating span:hover ~ span label,
+.rating span:hover label,
+.rating span.checked label,
+.rating span.checked ~ span label {
+    background-image: url("../imgs/star-yel.svg");
+}

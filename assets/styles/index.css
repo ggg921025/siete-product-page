@@ -1,0 +1,199 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+*:focus {
+  outline: none; }
+
+body {
+  margin: -10vw 0px;
+  padding-bottom: 50px; }
+
+.navbar {
+  height: 8vw;
+  width: 100%;
+  text-align: center;
+  background: #C4C4C4; }
+  .navbar .nav-title {
+    text-transform: uppercase;
+    font-size: 6vw; }
+
+.main-wrapper {
+  display: flex;
+  width: 100%; }
+  @media only screen and (max-width: 499px) {
+    .main-wrapper {
+      display: unset; } }
+  .main-wrapper .left-container {
+    flex: 1; }
+    .main-wrapper .left-container .img-wrapper {
+      margin-top: 3vw; }
+      .main-wrapper .left-container .img-wrapper img {
+        margin-left: 5%;
+        width: 95%; }
+    .main-wrapper .left-container .details-container {
+      margin-left: 1vw;
+      margin-top: 1.5vw; }
+      @media only screen and (max-width: 499px) {
+        .main-wrapper .left-container .details-container {
+          text-align: center; } }
+      .main-wrapper .left-container .details-container img {
+        margin-right: 5%;
+        width: 15%; }
+  .main-wrapper .right-container {
+    flex: 1; }
+    @media only screen and (max-width: 499px) {
+      .main-wrapper .right-container {
+        text-align: center; } }
+    .main-wrapper .right-container .chip-title {
+      font-family: SieteTltular2;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 3vw;
+      line-height: 5vw;
+      margin: 6vw 1vw 1vw 1vw;
+      text-transform: uppercase; }
+      @media only screen and (max-width: 499px) {
+        .main-wrapper .right-container .chip-title {
+          font-family: SieteTltular2;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 6vw;
+          line-height: 8vw; } }
+    .main-wrapper .right-container .chip-price {
+      margin: 1vw;
+      font-family: SieteTltular2;
+      font-weight: 400;
+      font-style: normal;
+      font-size: 2vw;
+      line-height: 2vw; }
+      @media only screen and (max-width: 499px) {
+        .main-wrapper .right-container .chip-price {
+          font-family: SieteTltular2;
+          font-weight: 400;
+          font-style: normal;
+          font-size: 5vw;
+          line-height: 5vw; } }
+    @media only screen and (max-width: 499px) {
+      .main-wrapper .right-container .review {
+        display: flex;
+        justify-content: center; } }
+    .main-wrapper .right-container .review .rating {
+      width: 13vw; }
+      @media only screen and (max-width: 839px) {
+        .main-wrapper .right-container .review .rating {
+          width: 15vw; } }
+      @media only screen and (max-width: 499px) {
+        .main-wrapper .right-container .review .rating {
+          float: none;
+          width: 23vw; } }
+      .main-wrapper .right-container .review .rating span label {
+        height: 2vw;
+        width: 2vw;
+        background-size: cover; }
+    .main-wrapper .right-container .review .review-mark {
+      margin: 1vw;
+      font-size: 2vw;
+      display: inline-block;
+      font-weight: 400;
+      line-height: 3vw;
+      text-transform: uppercase; }
+      @media only screen and (max-width: 499px) {
+        .main-wrapper .right-container .review .review-mark {
+          display: none; } }
+    .main-wrapper .right-container .review #rate-mark {
+      border: none;
+      background: none;
+      width: 8vw;
+      text-align: center;
+      font-size: 2vw;
+      font-weight: 400;
+      line-height: 3vw;
+      margin: 0 -2vw;
+      color: black;
+      padding: 0; }
+    .main-wrapper .right-container .chip-container {
+      margin-top: 2vw; }
+      @media only screen and (max-width: 499px) {
+        .main-wrapper .right-container .chip-container {
+          text-align: -webkit-center; } }
+      .main-wrapper .right-container .chip-container .chip-item {
+        margin-top: 1vw;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        border: 1px solid #99CCCC;
+        padding: 1.5vw; }
+        .main-wrapper .right-container .chip-container .chip-item .one-time label .radio-button__label {
+          font-family: Queulat;
+          font-weight: 900;
+          font-style: normal;
+          font-size: 1.5vw;
+          line-height: 2vw;
+          color: #99CCCC; }
+          @media only screen and (max-width: 499px) {
+            .main-wrapper .right-container .chip-container .chip-item .one-time label .radio-button__label {
+              font-family: Queulat;
+              font-weight: 900;
+              font-style: normal;
+              font-size: 3.5vw;
+              line-height: 2vw; } }
+        .main-wrapper .right-container .chip-container .chip-item .item-val {
+          margin: 0.5vw 0 0 0;
+          font-family: Queulat;
+          font-weight: 900;
+          font-style: normal;
+          font-size: 1.5vw;
+          line-height: 2vw;
+          color: #f04e98; }
+          @media only screen and (max-width: 499px) {
+            .main-wrapper .right-container .chip-container .chip-item .item-val {
+              font-family: Queulat;
+              font-weight: 900;
+              font-style: normal;
+              font-size: 3.5vw;
+              line-height: 6vw; } }
+        .main-wrapper .right-container .chip-container .chip-item.active {
+          border: 1px solid #009999; }
+          .main-wrapper .right-container .chip-container .chip-item.active .one-time label .radio-button__label {
+            color: #009999; }
+      .main-wrapper .right-container .chip-container .add-cart-container {
+        margin-top: 1vw;
+        width: 80%;
+        justify-content: space-between;
+        display: flex; }
+        .main-wrapper .right-container .chip-container .add-cart-container .cart-volumn {
+          display: flex;
+          justify-content: space-between;
+          border: 1px solid #99CCCC;
+          height: 5.5vw;
+          width: 25%;
+          color: #99CCCC; }
+          @media only screen and (max-width: 499px) {
+            .main-wrapper .right-container .chip-container .add-cart-container .cart-volumn {
+              height: 8vw; } }
+          .main-wrapper .right-container .chip-container .add-cart-container .cart-volumn span {
+            cursor: pointer;
+            margin: auto; }
+          .main-wrapper .right-container .chip-container .add-cart-container .cart-volumn input {
+            border: none;
+            color: #99CCCC;
+            width: 50%;
+            text-align: center;
+            padding: 0; }
+        .main-wrapper .right-container .chip-container .add-cart-container .btn-cart {
+          width: 70%;
+          height: 6vw;
+          text-transform: uppercase;
+          background: #009999;
+          border: 1px solid #009999;
+          color: white; }
+          @media only screen and (max-width: 499px) {
+            .main-wrapper .right-container .chip-container .add-cart-container .btn-cart {
+              height: 8vw; } }
+      .main-wrapper .right-container .chip-container .chip-chk:checked {
+        background: #009999;
+        color: white; }
+
+/*# sourceMappingURL=index.css.map */

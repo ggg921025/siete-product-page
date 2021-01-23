@@ -1,0 +1,240 @@
+@import '_variables';
+@import '_mixins';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+}
+
+body {
+  margin: -10vw 0px;
+  padding-bottom: 50px;
+}
+
+.navbar {
+  height: 8vw;
+  width: 100%;
+  text-align: center;
+  background: #C4C4C4;
+
+  .nav-title {
+    text-transform: uppercase;
+    font-size: 6vw;
+  }
+}
+
+.main-wrapper {
+  display: flex;
+  width: 100%;
+
+  @include mq('iPhone 11 Pro Max - 1', max) {
+    display: unset;
+  }
+
+  .left-container {
+    flex: 1;
+
+    .img-wrapper {
+      margin-top: 3vw;
+
+      img {
+        margin-left: 5%;
+        width: 95%;
+      }
+    }
+
+    .details-container {
+      margin-left: 1vw;
+      margin-top: 1.5vw;
+
+      @include mq('iPhone 11 Pro Max - 1', max) {
+        text-align: center;
+      }
+
+      img {
+        margin-right: 5%;
+        width: 15%;
+      }
+    }
+  }
+
+  .right-container {
+    flex: 1;
+
+    @include mq('iPhone 11 Pro Max - 1', max) {
+      text-align: center;
+    }
+
+    .chip-title {
+      @include setSieteTltular2Font(400, 3vw, 5vw);
+      margin: 6vw 1vw 1vw 1vw;
+      text-transform: uppercase;
+
+      @include mq('iPhone 11 Pro Max - 1', max) {
+        @include setSieteTltular2Font(400, 6vw, 8vw);
+      }
+    }
+
+    .chip-price {
+      margin: 1vw;
+      @include setSieteTltular2Font(400, 2vw, 2vw);
+
+      @include mq('iPhone 11 Pro Max - 1', max) {
+        @include setSieteTltular2Font(400, 5vw, 5vw);
+      }
+    }
+
+    .review {
+      @include mq('iPhone 11 Pro Max - 1', max) {
+        display: flex;
+        justify-content: center;
+      }
+
+      .rating {
+        width: 13vw;
+        @include mq('tablet-medium', max) {
+          width: 15vw;
+        }
+        @include mq('iPhone 11 Pro Max - 1', max) {
+          float: none;
+          width: 23vw;
+        }
+
+        span label {
+          height: 2vw;
+          width: 2vw;
+          background-size: cover;
+        }
+      }
+
+      .review-mark {
+        margin: 1vw;
+        font-size: 2vw;
+        display: inline-block;
+        font-weight: 400;
+        line-height: 3vw;
+        text-transform: uppercase;
+
+        @include mq('iPhone 11 Pro Max - 1', max) {
+          display: none;
+        }
+      }
+
+      #rate-mark {
+        border: none;
+        background: none;
+        width: 8vw;
+        text-align: center;
+        font-size: 2vw;
+        font-weight: 400;
+        line-height: 3vw;
+        margin: 0 -2vw;
+        color: black;
+        padding: 0;
+      }
+    }
+
+    .chip-container {
+      margin-top: 2vw;
+
+      @include mq('iPhone 11 Pro Max - 1', max) {
+        text-align: -webkit-center;
+      }
+
+      .chip-item {
+        margin-top: 1vw;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        border: 1px solid $primary-deactive;
+        padding: 1.5vw;
+
+        .one-time label .radio-button__label {
+          @include setQueulatFont(900, 1.5vw, 2vw);
+          color: $primary-deactive;
+
+          @include mq('iPhone 11 Pro Max - 1', max) {
+            @include setQueulatFont(900, 3.5vw, 2vw);
+          }
+        }
+
+        .item-val {
+          margin: 0.5vw 0 0 0;
+          @include setQueulatFont(900, 1.5vw, 2vw);
+          color: $secondary-active;
+          @include mq('iPhone 11 Pro Max - 1', max) {
+            @include setQueulatFont(900, 3.5vw, 6vw);
+          }
+        }
+
+        &.active {
+          border: 1px solid $primary-active;
+
+          .one-time label .radio-button__label {
+            color: $primary-active;
+          }
+        }
+      }
+
+      .add-cart-container {
+        margin-top: 1vw;
+        width: 80%;
+        justify-content: space-between;
+        display: flex;
+
+        .cart-volumn {
+          display: flex;
+          justify-content: space-between;
+          border: 1px solid $primary-deactive;
+          height: 5.5vw;
+          width: 25%;
+          color: $primary-deactive;
+          @include mq('iPhone 11 Pro Max - 1', max) {
+            height: 8vw;
+          }
+          // .span-reduce {
+          //   margin: 2vw 0 0 1vw;
+          // }
+
+          // .span-increase {
+          //   margin: 2vw 1vw 0 0;
+          // }
+
+          span {
+            cursor: pointer;
+            margin: auto;
+          }
+
+          input {
+            border: none;
+            color: $primary-deactive;
+            width: 50%;
+            text-align: center;
+            padding: 0;
+          }
+        }
+
+        .btn-cart {
+          width: 70%;
+          height: 6vw;
+          text-transform: uppercase;
+          background: $primary-active;
+          border: 1px solid $primary-active;
+          color: white;
+          @include mq('iPhone 11 Pro Max - 1', max) {
+            height: 8vw;
+          }
+        }
+      }
+
+      .chip-chk:checked {
+        background: $primary-active;
+        color: white;
+      }
+    }
+  }
+}
