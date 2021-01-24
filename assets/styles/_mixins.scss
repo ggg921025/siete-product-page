@@ -1,39 +1,49 @@
-@mixin setFont($weight, $size, $height, $font : null){
-  @if $font != null {
+@mixin setFont($weight, $size, $height, $font : null) {
+  @if $font !=null {
     font-family: $font;
-  } 
-  @if ($font != null) {
+  }
+
+  @if ($font !=null) {
     font-weight: $weight;
   }
+
   font-size: $size;
   line-height: $height;
 }
-@mixin setVerticalMiddle($left : true){
+
+@mixin setSize($width: 100%, $height: 100%) {
+  width: $width;
+  height: $height;
+}
+
+@mixin setVerticalMiddle($left : true) {
   position: absolute;
   top: 50%;
-  @if $left != true {
+
+  @if $left !=true {
     right: 0;
-  } 
+  }
+
   transform: translate(0, -50%);
 }
-@mixin setParentCenter(){
+
+@mixin setParentCenter() {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-@mixin setSize($width: 100%, $height: 100%){
-  width: $width;
-  height: $height;
-}
+
 @mixin mq($width, $type: min) {
   @if map_has_key($breakpoints, $width) {
-      $width: map_get($breakpoints, $width);
-      @if $type == max {
-          $width: $width - 1px;
-      }
-      @media only screen and (#{$type}-width: $width) {
-          @content;
-      }
+    $width: map_get($breakpoints, $width);
+
+    @if $type==max {
+      $width: $width - 1px;
+    }
+
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
   }
 }

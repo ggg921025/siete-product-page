@@ -12,8 +12,14 @@
 }
 
 .main-container {
+  margin: 0 auto;
   @include setSize(1440px, 1034px);
-
+  @include mq('desktop-wide', max) {
+    @include setSize(100%);
+  }
+  @include mq('tablet', max) {
+    @include setSize(100%, 1336px);
+  }
   .navbar {
     position: relative;
     text-align: center;
@@ -25,13 +31,19 @@
       margin: 0px;
       @include setParentCenter();
       @include setFont(null, 61.04px, 57.99px);
+      @include mq('desktop-wide', max) {
+        @include setFont(null, 45px, 57.99px);
+      }
+      @include mq('tablet', max) {
+        @include setFont(null, 30px, 57.99px);
+      }
     }
   }
   .main-wrapper {
     display: flex;
     width: 100%;
 
-    @include mq('iPhone 11 Pro Max - 1', max) {
+    @include mq('tablet', max) {
       display: unset;
     }
 
@@ -40,18 +52,43 @@
 
       .img-wrapper {
         margin: 28px 50px;
+        @include mq('desktop-wide', max) {
+          img{
+            @include setSize(100%);
+          }
+        }
+        @include mq('tablet', max) {
+          margin: 28px 48px 0 48px;
+          img{
+            @include setSize(100%);
+          }
+        }
       }
 
       .details-container {
         margin: 17px 20px;
-
-        @include mq('iPhone 11 Pro Max - 1', max) {
-          text-align: center;
-        }
-
-        img {
+        img:first-child {
           margin-right: 58.97px;
         }
+        @include mq('desktop-wide', max) {
+          img{
+            width: 20%;
+            &:first-child{
+              margin-right: 5%;
+            }
+          }
+        }
+        @include mq('tablet', max) {
+          text-align: center;
+          img {
+            margin-right: 0px;
+            @include setSize(77px, 78px);
+            &:first-child {
+              margin-right: 30.83px;
+            }
+          }
+        }
+
       }
     }
 
@@ -59,7 +96,11 @@
       padding: 102px 10px 20px 10px;
       flex: 1;
 
-      @include mq('iPhone 11 Pro Max - 1', max) {
+      @include mq('desktop-wide', max) {
+        padding: 5vw 0 0 0;
+      }
+      @include mq('tablet', max) {
+        padding: 23px 0 0 0;
         text-align: center;
       }
 
@@ -68,8 +109,12 @@
         margin: 0;
         text-transform: uppercase;
 
-        @include mq('iPhone 11 Pro Max - 1', max) {
-          @include setFont(400, 6vw, 8vw, SieteTltular2);
+        @include mq('tablet-medium', max) {
+          @include setFont(400, 28px, 37.11px, SieteTltular2);
+        }
+
+        @include mq('tablet', max) {
+          @include setFont(400, 30px, 37.11px, SieteTltular2);
         }
       }
 
@@ -77,14 +122,15 @@
         margin-top: 0;
         @include setFont(400, 18px, 37.11px, SieteTltular2);
 
-        @include mq('iPhone 11 Pro Max - 1', max) {
-          @include setFont(400, 5vw, 5vw, SieteTltular2);
+        @include mq('tablet', max) {
+          margin: 15px;
+          @include setFont(400, 27.25px, 29.69px, SieteTltular2);
         }
       }
 
       .review {
         cursor: pointer;
-        @include mq('iPhone 11 Pro Max - 1', max) {
+        @include mq('tablet', max) {
           display: flex;
           justify-content: center;
         }
@@ -93,7 +139,7 @@
           display: flex;
           width: unset;
 
-          @include mq('iPhone 11 Pro Max - 1', max) {
+          @include mq('tablet', max) {
             float: none;
           }
 
@@ -101,6 +147,9 @@
             background-size: cover;
             cursor: pointer;
             @include setSize(32px, 30px);
+            @include mq('tablet', max) {
+              @include setSize(19.99px, 18.72px);
+            }
           }
           span input{
             cursor: pointer;
@@ -108,12 +157,12 @@
         }
 
         .review-mark {
-          margin: -4px 11.25px;
+          margin: 3px 11.25px;
           display: inline-block;
           text-transform: uppercase;
-          @include setFont(400, 31.25px, 29.69px);
+          @include setFont(400, 18px, 29.69px);
 
-          @include mq('iPhone 11 Pro Max - 1', max) {
+          @include mq('tablet', max) {
             display: none;
           }
           input{
@@ -129,14 +178,14 @@
           margin: 0 -35px;
           color: black;
           padding: 0;
-          @include setFont(400, 31.25px, 29.69px);
+          @include setFont(400, 18px, 29.69px);
         }
       }
 
       .chip-container {
-        margin-top: 19.57px;
+        margin-top: 32.75px;
 
-        @include mq('iPhone 11 Pro Max - 1', max) {
+        @include mq('tablet', max) {
           text-align: -webkit-center;
         }
 
@@ -144,11 +193,18 @@
           margin: 0 0 12.25px 0;
           display: flex;
           justify-content: space-between;
-          width: 440.67px;
-          height: 57px;
           border: 1px solid $primary-deactive;
           padding: 16.13px;
           position: relative;
+          @include setSize(440.67px, 57px);
+          @include mq('desktop-wide', max) {
+            @include setSize(80%, 47.22px);
+            margin: 0 0 10.12px 0;
+          }
+          @include mq('tablet', max) {
+            @include setSize(80%, 47.22px);
+            margin: 0 0 10.12px 0;
+          }
 
           .radio-button{
             @include setVerticalMiddle();
@@ -158,19 +214,19 @@
             color: $primary-deactive;
             vertical-align: middle;
 
-            @include mq('iPhone 11 Pro Max - 1', max) {
-              @include setFont(900, 3.5vw, 2vw, Queulat);
+            @include mq('tablet', max) {
+              @include setFont(900, 14px, 16.8px, Queulat);
             }
           }
 
           .item-val {
-            @include setFont(900, 1.5vw, 2vw, Queulat);
+            @include setFont(900, 16px, 19.2px, Queulat);
             color: $secondary-active;
             @include setVerticalMiddle(false);
             margin-right: 19.65px;
 
-            @include mq('iPhone 11 Pro Max - 1', max) {
-              @include setFont(900, 3.5vw, 6vw, Queulat);
+            @include mq('tablet', max) {
+              @include setFont(900, 14px, 16.8px, Queulat);
             }
           }
 
@@ -185,22 +241,28 @@
 
         .add-cart-container {
           margin-top: 11.35px;
-          width: 440.67px;
-          height: 57px;
           justify-content: space-between;
           display: flex;
+          @include setSize(440.67px, 57px);
+          @include mq('desktop-wide', max) {
+            @include setSize(80%, 47.22px);
+          }
+          @include mq('tablet', max) {
+            @include setSize(80%, 47.22px);
+          }
 
           .cart-volumn {
             display: flex;
             justify-content: space-between;
             border: 1px solid $primary-deactive;
-            height: 57px;
-            width: 96px;
             color: $primary-deactive;
             font-size: 16px;
-
-            @include mq('iPhone 11 Pro Max - 1', max) {
-              height: 8vw;
+            @include setSize(96px, 57px);
+            @include mq('desktop-wide', max) {
+              @include setSize(25%, 47.22px);
+            }
+            @include mq('tablet', max) {
+              @include setSize(25%, 47.22px);
             }
 
             span {
@@ -219,17 +281,19 @@
           }
 
           .btn-cart {
-            width: 330px;
-            height: 100%;
             text-transform: uppercase;
             background: $primary-active;
             border: 1px solid $primary-active;
             color: white;
             font-size: 16px;
             cursor: pointer;
+            @include setSize(330px);
 
-            @include mq('iPhone 11 Pro Max - 1', max) {
-              height: 8vw;
+            @include mq('desktop-wide', max) {
+              @include setSize(70%, 47.22px);
+            }
+            @include mq('tablet', max) {
+              @include setSize(70%, 47.22px);
             }
           }
         }
