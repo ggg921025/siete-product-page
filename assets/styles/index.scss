@@ -14,31 +14,37 @@
 .main-container {
   margin: 0 auto;
   @include setSize(1440px, 1034px);
+
   @include mq('desktop-wide', max) {
     @include setSize(100%);
   }
+
   @include mq('tablet', max) {
     @include setSize(100%, 1336px);
   }
+
   .navbar {
     position: relative;
     text-align: center;
     background: #C4C4C4;
     @include setSize(100%, 84px);
-  
+
     .nav-title {
       text-transform: uppercase;
       margin: 0px;
       @include setParentCenter();
       @include setFont(null, 61.04px, 57.99px);
+
       @include mq('desktop-wide', max) {
         @include setFont(null, 45px, 57.99px);
       }
+
       @include mq('tablet', max) {
         @include setFont(null, 30px, 57.99px);
       }
     }
   }
+
   .main-wrapper {
     display: flex;
     width: 100%;
@@ -52,14 +58,17 @@
 
       .img-wrapper {
         margin: 28px 50px;
+
         @include mq('desktop-wide', max) {
-          img{
+          img {
             @include setSize(100%);
           }
         }
+
         @include mq('tablet', max) {
           margin: 28px 48px 0 48px;
-          img{
+
+          img {
             @include setSize(100%);
           }
         }
@@ -67,28 +76,33 @@
 
       .details-container {
         margin: 17px 20px;
+
         img:first-child {
           margin-right: 58.97px;
         }
+
         @include mq('desktop-wide', max) {
-          img{
+          img {
             width: 20%;
-            &:first-child{
+
+            &:first-child {
               margin-right: 5%;
             }
           }
         }
+
         @include mq('tablet', max) {
           text-align: center;
+
           img {
             margin-right: 0px;
             @include setSize(77px, 78px);
+
             &:first-child {
               margin-right: 30.83px;
             }
           }
         }
-
       }
     }
 
@@ -99,6 +113,7 @@
       @include mq('desktop-wide', max) {
         padding: 5vw 0 0 0;
       }
+
       @include mq('tablet', max) {
         padding: 23px 0 0 0;
         text-align: center;
@@ -130,6 +145,7 @@
 
       .review {
         cursor: pointer;
+
         @include mq('tablet', max) {
           display: flex;
           justify-content: center;
@@ -147,11 +163,13 @@
             background-size: cover;
             cursor: pointer;
             @include setSize(32px, 30px);
+
             @include mq('tablet', max) {
               @include setSize(19.99px, 18.72px);
             }
           }
-          span input{
+
+          span input {
             cursor: pointer;
           }
         }
@@ -165,7 +183,8 @@
           @include mq('tablet', max) {
             display: none;
           }
-          input{
+
+          input {
             cursor: pointer;
           }
         }
@@ -197,18 +216,21 @@
           padding: 16.13px;
           position: relative;
           @include setSize(440.67px, 57px);
+
           @include mq('desktop-wide', max) {
             @include setSize(80%, 47.22px);
             margin: 0 0 10.12px 0;
           }
+
           @include mq('tablet', max) {
             @include setSize(80%, 47.22px);
             margin: 0 0 10.12px 0;
           }
 
-          .radio-button{
+          .radio-button {
             @include setVerticalMiddle();
           }
+
           .one-time label .radio-button__label {
             @include setFont(900, 16px, 19.2px, Queulat);
             color: $primary-deactive;
@@ -244,9 +266,11 @@
           justify-content: space-between;
           display: flex;
           @include setSize(440.67px, 57px);
+
           @include mq('desktop-wide', max) {
             @include setSize(80%, 47.22px);
           }
+
           @include mq('tablet', max) {
             @include setSize(80%, 47.22px);
           }
@@ -258,9 +282,11 @@
             color: $primary-deactive;
             font-size: 16px;
             @include setSize(96px, 57px);
+
             @include mq('desktop-wide', max) {
               @include setSize(25%, 47.22px);
             }
+
             @include mq('tablet', max) {
               @include setSize(25%, 47.22px);
             }
@@ -292,6 +318,7 @@
             @include mq('desktop-wide', max) {
               @include setSize(70%, 47.22px);
             }
+
             @include mq('tablet', max) {
               @include setSize(70%, 47.22px);
             }
