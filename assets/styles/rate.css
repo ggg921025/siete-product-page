@@ -1,7 +1,6 @@
 .rating {
     float:left;
     width:19vw;
-    margin-top: 1vw;
 }
 .rating span { float:right; position:relative; }
 .rating span input {
